@@ -15,7 +15,9 @@
 </script>
 
 <main style:height="800px">
-	{#await fetched then}
+	{#await fetched}
+		<p>Loading...</p>
+	{:then}
 		<EmbeddingAtlas
 			coordinator={vg.coordinator()}
 			table="demo"
@@ -24,6 +26,8 @@
 			textColumn="description"
 			automaticLabels={true}
 		/>
+	{:catch e}
+		<p>Failed to load data: {e.message}</p>
 	{/await}
 </main>
 
