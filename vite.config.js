@@ -5,8 +5,9 @@ import { svelte } from "@sveltejs/vite-plugin-svelte";
 export default defineConfig({
 	base: "/test-embedding-atlas/",
 	plugins: [svelte()],
-	//  huh? comment this out and generating clusters works
-	optimizeDeps: {
-		exclude: ["embedding-atlas"],
-	},
+	//  huh? comment this out and generating clusters works in `pnpm dev`
+	// otherwise doesn't work
+	// optimizeDeps: {
+	// 	exclude: ["embedding-atlas"],
+	// },
 });
